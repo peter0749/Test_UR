@@ -1,0 +1,2 @@
+Azure_Kinect_ROS_Driver:azure_customize_calibration/azure:azure_customize_calibration/azure_calibration:iai_kinect2/iai_kinect2:iai_kinect2/kinect2_bridge:iai_kinect2/kinect2_calibration:iai_kinect2/kinect2_registration:iai_kinect2/kinect2_viewer:realsense-ros/realsense2_camera:realsense-ros/realsense2_description
+-DCATKIN_DEVEL_PREFIX=/home/demo/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/demo/catkin_ws/install -G Unix Makefiles
