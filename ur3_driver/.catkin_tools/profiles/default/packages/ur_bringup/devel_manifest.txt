@@ -1,0 +1,5 @@
+fmauch_universal_robot/ur_bringup
+/home/test/ur3_driver/devel/.private/ur_bringup/cmake.lock /home/test/ur3_driver/devel/./cmake.lock
+/home/test/ur3_driver/devel/.private/ur_bringup/lib/pkgconfig/ur_bringup.pc /home/test/ur3_driver/devel/lib/pkgconfig/ur_bringup.pc
+/home/test/ur3_driver/devel/.private/ur_bringup/share/ur_bringup/cmake/ur_bringupConfig-version.cmake /home/test/ur3_driver/devel/share/ur_bringup/cmake/ur_bringupConfig-version.cmake
+/home/test/ur3_driver/devel/.private/ur_bringup/share/ur_bringup/cmake/ur_bringupConfig.cmake /home/test/ur3_driver/devel/share/ur_bringup/cmake/ur_bringupConfig.cmake

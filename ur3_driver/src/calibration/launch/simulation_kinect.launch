@@ -1,0 +1,56 @@
+<launch>
+    <arg name="namespace_prefix" default="easy_handeye" />
+    <arg name="marker_size" doc="Size of the ArUco marker used, in meters" />
+    <arg name="marker_id" doc="The ID of the ArUco marker used" />
+
+    <!-- robot model -->
+    <include file="$(find ur_description)/launch/ur3_upload.launch">
+      <arg name="limited" value="false"/>
+      <arg name="kinematics_config" value="$(find ur_description)/config/ur3_default.yaml"/>
+    </include>
+        
+    <!-- start the robot -->
+    <include file="$(find ur3_moveit_config)/launch/ur3_moveit_planning_execution.launch">
+        <arg name="limited" value="false" />
+        <arg name="sim" value="true"/>
+    </include>
+
+    <!--include file="$(find kinect2_bridge)/launch/kinect2_bridge.launch">
+        <param name="queue_size" type="int" value="10" />
+        <param name="bilateral_filter"  type="bool"   value="true"/>
+        <param name="edge_aware_filter" type="bool"   value="true"/>
+        <param name="fps_limit"         type="double" value="30"/>
+    </include-->
+
+    <include file="$(find azure_kinect_ros_driver)/launch/driver.launch">
+        <!-- TODO: Add arguments here -->
+    </include>
+
+    <node pkg="tf" type="static_transform_publisher" name="fake_world" args="0 0 0 0 0 0 world base_link 100" />
+    <!--node pkg="tf" type="static_transform_publisher" name="bind_rgb2depth" args="-0.03209097 -0.00249324  0.00168236 -0.05137117 -0.00201541 -0.00205813  0.99867548 rgb_camera_link depth_camera_link 100" /-->
+    <!--node pkg="tf" type="static_transform_publisher" name="bind_robot_base_to_camera_base" args="0.24741974429220803  0.4475273125324372  0.5381298909180738  -0.6549459368258073  0.07600002934631227  0.7498930963725571  -0.05413094667105028 base_link camera_base 100" /-->
+
+    <node name="ar_track_alvar" pkg="ar_track_alvar" type="individualMarkersNoKinect" respawn="false" output="screen">
+        <param name="marker_size" type="double" value="6" />
+        <param name="max_new_marker_error" type="double" value="0.08" />
+        <param name="max_track_error" type="double" value="0.2" />
+        <!--param name="output_frame" type="string" value="kinect2_rgb_optical_frame" /-->
+        <param name="output_frame" type="string" value="rgb_camera_link" />
+
+        <!--
+        <remap from="camera_image" to="/kinect2/hd/image_color_rect" />
+        <remap from="camera_info" to="/kinect2/hd/camera_info" />
+        -->
+        <remap from="camera_image" to="/rgb/image_raw" />
+        <remap from="camera_info" to="/rgb/camera_info" />
+    </node>
+
+    <!-- start easy_handeye -->
+    <include file="$(find easy_handeye)/launch/publish.launch" >
+        <arg name="namespace_prefix" value="$(arg namespace_prefix)_table" />
+        <arg name="eye_on_hand" value="false" />
+
+        <arg name="tracking_base_frame" value="rgb_camera_link" />
+        <arg name="robot_base_frame" value="base_link" />
+    </include>
+</launch>
