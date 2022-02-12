@@ -12,3 +12,13 @@
 
 ### Original files
 This [google drive](https://drive.google.com/file/d/1JEZeHwHD78qHOy8r65TrKTqxNjVLcegN/view?usp=sharing) contains full files. If you want to see files that are not uploaded, you can download the zip from here)
+
+### Explanation
+1. catkin_ws
+- Main workspace (Our lab has realsence and kinect sensor)
+2. cml_grasp_interface
+- Commnicate with pybullet
+3. tm700_ws
+- tm700 (another robot arm)
+4. ur3_driver
+5. Azure-Kinect-Sensor-SDK
