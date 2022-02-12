@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/demo/tm700_ws/src/ros-driver-techman-robot/tm_kinematics/include/tm_kinematics/tm_kin.h
+
+/home/demo/tm700_ws/src/ros-driver-techman-robot/tm_kinematics/src/tm_kin.cpp
+tm_kinematics/tm_kin.h
+/home/demo/tm700_ws/src/ros-driver-techman-robot/tm_kinematics/src/tm_kinematics/tm_kin.h
+math.h
+-
+stdio.h
+-
+

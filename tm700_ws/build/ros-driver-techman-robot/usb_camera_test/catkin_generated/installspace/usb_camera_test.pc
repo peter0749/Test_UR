@@ -1,0 +1,8 @@
+prefix=/home/demo/tm700_ws/install
+
+Name: usb_camera_test
+Description: Description of usb_camera_test
+Version: 0.0.0
+Cflags: -I/opt/ros/kinetic/include/opencv-3.3.1-dev -I/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv
+Libs: -L${prefix}/lib /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1 /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1 /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_highgui3.so.3.3.1
+Requires: cv_bridge roscpp sensor_msgs usb_cam

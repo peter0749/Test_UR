@@ -1,0 +1,6 @@
+set(calibration_SETUP_PY_VERSION "0.0.0")
+set(calibration_SETUP_PY_SCRIPTS "")
+set(calibration_SETUP_PY_PACKAGES "calibration")
+set(calibration_SETUP_PY_PACKAGE_DIRS "src/calibration")
+set(calibration_SETUP_PY_MODULES "")
+set(calibration_SETUP_PY_MODULE_DIRS "")

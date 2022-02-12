@@ -1,0 +1,8 @@
+prefix=/home/demo/tm700_ws/devel
+
+Name: calibration
+Description: Description of calibration
+Version: 0.0.0
+Cflags: -I/home/demo/tm700_ws/devel/include
+Libs: -L${prefix}/lib 
+Requires: 

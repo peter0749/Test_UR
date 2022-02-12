@@ -1,0 +1,59 @@
+<h1>
+    TM 700 calibration tool   
+</h1>
+<img src="http://localhost:5000/image.png" />
+<img src="http://localhost:5000/image_shelf.png" />
+<h3>Joint positions</h3>
+<ol>
+    {% for joint in joints %}
+        <li>{{ joint }}</li>
+    {% endfor %}
+</ol>
+<p>
+    <a href="/table_mode">Switch to table mode</a>
+    <a href="/shelf_mode">Switch to shelf mode</a>
+    <a href="/records/add">record positions</a>
+    <a href="/records">show record positions</a>
+</p>
+
+<p>{{ tag_state }}</p>
+
+{% if tag_tf %}
+<p>{{ tag_tf }}</p>
+{% endif %}
+
+{% if message %}
+<p>Error message: {{ message }}</p>
+{% endif %}
+
+<p> Current mode: {{ mode }} </p>
+<p> Current record path: {{ record_path }} </p>
+
+<p><a href="/take_sample">take sample</a></p>
+<button onClick="window.location.reload();">refresh </button>
+
+
+{% if hand_world_samples %}
+<p><a href="/reset">reset</a></p>
+<p><a href="/compute">compute result</a></p>
+<h3>Hand world samples</h3>
+<ol>
+    {% for transform in hand_world_samples %}
+        <li>{{ transform }}</li>
+    {% endfor %}
+</ol>
+<h3>Camera marker samples</h3>
+<ol>
+    {% for transform in camera_marker_samples %}
+        <li>{{ transform }}</li>
+    {% endfor %}
+</ol>
+{% endif %}
+
+
+{% if result %}
+<h3>Result</h3>
+<p>{{ result }}</p>
+<p><a href="/save">save result</a></p>
+{% endif %}
+

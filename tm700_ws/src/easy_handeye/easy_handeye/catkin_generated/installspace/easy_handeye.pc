@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: easy_handeye
+Description: Description of easy_handeye
+Version: 0.2.0
+Cflags: -I/usr/local/include
+Libs: -L/usr/local/lib 
+Requires: message_runtime geometry_msgs visp_hand2eye_calibration std_msgs geometry_msgs
